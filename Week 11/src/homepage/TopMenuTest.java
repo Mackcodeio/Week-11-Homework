@@ -41,18 +41,7 @@ public class TopMenuTest extends Utility {
     }
 
     @Test
-    public void verifyUserShouldNavigateToDesktopsPageSuccessfully() {
-        Actions actions = new Actions(driver);
-        WebElement computers = driver.findElement(By.xpath("//a[normalize-space()='Desktops']"));
-        actions.moveToElement(computers).perform();
-        WebElement showAllDesktops = driver.findElement(By.xpath("//a[normalize-space()='Show AllDesktops']"));
-        String Destopstext = showAllDesktops.getText();
-        actions.click(showAllDesktops).perform();
-        selectMenu(Destopstext);
-    }
-
-    @Test
-    public void verifyUserShouldNavigateToLaptopsAndNotebooksPageSuccessfully() {
+    public void verifyUserShouldNavigateToDesktopsPageSuccessfully() throws InterruptedException {
         Actions actions = new Actions(driver);
         WebElement leptopsNotebooks = driver.findElement(By.xpath("//a[normalize-space()='Laptops & Notebooks']"));
         actions.moveToElement(leptopsNotebooks).perform();
@@ -60,10 +49,41 @@ public class TopMenuTest extends Utility {
         String pass = showAllLeptopNotebooks.getText();
         actions.click(showAllLeptopNotebooks).perform();
         selectMenu(pass);
+
+        // Method 2
+//
+//        By mouseHoverDesktops = By.xpath("//a[normalize-space()='Desktops']");              // Desktops Xpath
+//        By mouseClickShowDesktops = By.xpath("//a[normalize-space()='Show AllDesktops']"); // ShowALlDesktops Xpath
+//        String title = mouseHoverAndClickAndReturn(mouseHoverDesktops,mouseClickShowDesktops);
+//        selectMenu(title);
     }
 
     @Test
-    public void verifyUserShouldNavigateToComponentsPageSuccessfully() {
+    public void verifyUserShouldNavigateToLaptopsAndNotebooksPageSuccessfully() throws InterruptedException {
+        Actions actions = new Actions(driver);
+        WebElement leptopsNotebooks = driver.findElement(By.xpath("//a[normalize-space()='Laptops & Notebooks']"));
+        actions.moveToElement(leptopsNotebooks).perform();
+        WebElement showAllLeptopNotebooks = driver.findElement(By.xpath("//a[normalize-space()='Show AllLaptops & Notebooks']"));
+        String pass = showAllLeptopNotebooks.getText();
+        System.out.println("--------------PASS------------"+pass);
+        actions.click(showAllLeptopNotebooks).perform();
+        selectMenu(pass);
+
+        // Method 2
+
+        // By mouseHoverLeptopAndNoteBook = By.xpath("//a[normalize-space()='Laptops & Notebooks']");              // LeptopAndNoteBook Xpath
+//        By mouseClickShowLeptopAndNoteBook = By.xpath("//a[normalize-space()='Show AllLaptops & Notebooks']"); // ShowALlLeptopAndNoteBook Xpath
+//        WebElement showAllLeptopNotebooks = driver.findElement(By.xpath("//a[normalize-space()='Show AllLaptops & Notebooks']"));
+//        String pass = showAllLeptopNotebooks.getText();
+//        System.out.println("---------PASS----------"+pass);
+//        String title = mouseHoverAndClickAndReturn(mouseHoverLeptopAndNoteBook,mouseClickShowLeptopAndNoteBook);
+//        selectMenu(title);
+
+    }
+
+    @Test
+    public void verifyUserShouldNavigateToComponentsPageSuccessfully() throws InterruptedException {
+
         Actions actions = new Actions(driver);//a[normalize-space()='Components']
         WebElement components = driver.findElement(By.xpath("//a[normalize-space()='Components']"));
         actions.moveToElement(components).perform();
@@ -71,6 +91,12 @@ public class TopMenuTest extends Utility {
         String passComponents = showComponents.getText();
         actions.click(showComponents).perform();
         selectMenu(passComponents);
+
+        // Method 2
+//        By mouseHoverComponentsTab = By.xpath("//a[normalize-space()='Components']");              // Components Xpath
+//        By mouseClickShowComponents = By.xpath("//a[normalize-space()='Show AllComponents']"); // Showomponents Xpath
+//        String title = mouseHoverAndClickAndReturn(mouseHoverComponentsTab,mouseClickShowComponents);
+//        selectMenu(title);
     }
 
     @After
