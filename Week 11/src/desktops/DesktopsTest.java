@@ -31,15 +31,9 @@ public class DesktopsTest extends Utility {
 
     @Test
     public void verifyProductAddedToShoppingCartSuccessFully() throws InterruptedException {
-        By mouseHoverDesktops = By.xpath("//a[normalize-space()='Desktops']");
-        By mouseClickShowDesktops = By.xpath("//a[normalize-space()='Show AllDesktops']");
 
-        mouseHoverAndClick(mouseHoverDesktops, mouseClickShowDesktops);
-
-        // 2.4 Select product “HP LP3065”
-        By selectFromDropDown = By.xpath("//select[@id='input-sort']");
-        String selectValue = "Name (A - Z)";
-        selectByVisibleTextFromDropDown(selectFromDropDown, selectValue);
+        //2.1 to 2.3
+        verifyProductArrangeInAlphaBaticalOrder();
 
 
         //img[@title='HP LP3065']
