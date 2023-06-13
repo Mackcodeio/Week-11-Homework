@@ -16,7 +16,7 @@ public class Utility extends BaseTest {
     }
 
     public String getTextFromElement(By by) {
-        return driver.findElement(by).getText();// logout
+        return driver.findElement(by).getText();// Return text
     }
 
     public void verifyText(String expectedMessage, By by) {
@@ -83,7 +83,6 @@ public class Utility extends BaseTest {
 
     // This method will send text to elements
     public void sendTextToElement(By by, String text) {
-        System.out.println("---------dd--------"+text);
         WebElement element=driver.findElement(by);
         element.sendKeys(text);
     }

@@ -77,7 +77,7 @@ public class DesktopsTest extends Utility {
         //2.12 Verify the Product name "HP LP3065"
         By Product_xpath = By.xpath("//div[@class='table-responsive']//table[@class='table table-bordered']//tbody//td[2]");
         String expectedMessage_HP = "HP LP3065";
-        verifyText(expectedMessage_shopping, shopping_xpath);
+        verifyText(expectedMessage_HP, shopping_xpath);
 
 
         //2.13 Verify the Delivery Date "2022-11-30"
